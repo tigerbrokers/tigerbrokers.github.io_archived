@@ -131,5 +131,5 @@ theme_config:
         url: https://www.itiger.com
         icon: link
   sharing_options: false
-  google_analytics_id: "UA-101480470-2"
 
+google_analytics_id: "UA-101480470-2"
