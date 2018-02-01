@@ -1,6 +1,10 @@
 ---
-title: 404
-date: 2018-02-01 20:28:32
+title: Ops
+layout: page
+meta: false
+actions: false
+comments: false
+permlink: /404.html
 ---
 
 # 404 - Page Not Found
