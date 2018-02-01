@@ -121,11 +121,15 @@ theme_config:
             title: global.about
             url: /#about
             icon: question
-    author_links:
+    resources:
       github:
         title: global.github
         url: https://github.com/tigerbrokers
         icon: github
+      itiger:
+        title: global.itiger
+        url: https://www.itiger.com
+        icon: link
   sharing_options: false
   google_analytics_id: "UA-101480470-2"
 
