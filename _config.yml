@@ -89,7 +89,7 @@ deploy:
 ## Themes: https://hexo.io/themes/
 theme: tiger
 theme_config:
-  favicon: favicon.ico
+  favicon: /assets/images/favicon.ico
   cover_image: bg-city.jpg
   author:
     picture: logo.png
