@@ -53,7 +53,8 @@
                 &:hover,
                 &:active {
                     text-decoration: none;
-                    color:           lighten(map-get($sidebar, color), 35);
+                    color: map-get($highlight-colors, 'yellow')
+                    // color:           lighten(map-get($sidebar, color), 35);
                 }
             }
         }

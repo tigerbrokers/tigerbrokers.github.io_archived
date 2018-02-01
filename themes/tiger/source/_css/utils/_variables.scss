@@ -6,8 +6,8 @@ $open-sans:            'Open Sans';
 $open-sans-sans-serif: 'Open Sans', sans-serif;
 $merriweather-serif:   'Merriweather', serif;
 $monospace:             Menlo, Consolas, monospace;
-
-$font-family-base: $open-sans-sans-serif;
+$helvetica:            'Helvetica Neue,Helvetica,Arial,sans-serif';
+$font-family-base: $helvetica;
 
 $font-families: (
    // base
@@ -177,6 +177,7 @@ $highlight-colors: (
     // Background
     'white':           #fff,
     // General color
+    'yellow':          #ffe100,
     'night-rider':     #333,
     'bondi-blue':      #0086b3,
     'persimmon':       #df5000,
@@ -254,3 +255,6 @@ $tooltip: (
     // Don't change this value, used to vertically center the tooltip content
     'arrow-height': 12px
 );
+
+$tiger-color-yellow: #ffe100;
+

@@ -24,6 +24,10 @@
             word-break: initial;
             overflow:   hidden;
 
+            padding-left: 20px;
+            margin-left: -20px;
+            border-left: 5px solid $tiger-color-yellow;
+
             &:hover {
                 text-decoration: none;
             }
@@ -44,6 +48,7 @@
     .postShorten-excerpt_link {
         // Bring the post's link nearest of the excerpt
         margin-top: -15px;
+        float: right;
     }
     .postShorten-meta,
     .postShorten-readingtime,
@@ -61,6 +66,10 @@
         font-weight:    400;
         overflow:       hidden;
         @include prefix('hypens', 'auto', 'webkit' 'moz');
+
+        h1, h2, h3, h4, h5 {
+          font-weight: normal;
+        }
 
         img {
             display:   block;
