@@ -5,7 +5,7 @@
 # Site
 title: TigerFED
 subtitle: 老虎证券桌面技术团队博客
-description: 桌面团队(Desktop)成立于 2016年9月，致力于提升老虎桌面端的交易和行情体验，获取更多的国际化和桌面端交易用户 的Web产品开发团队。
+description: "桌面团队(Desktop)成立于 2016年9月，致力于提升老虎桌面端的交易和行情体验，获取更多的国际化和桌面端交易用户 的Web产品开发团队。"
 author: TigerFED
 language: zh-cn
 timezone: Asia/Shanghai
@@ -80,7 +80,7 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:tigerbrokers/blog.git
+  repo: git@github.com:tigerbrokers/tigerbrokers.github.io.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
 
