@@ -133,3 +133,19 @@ theme_config:
   sharing_options: false
 
 google_analytics_id: "UA-101480470-2"
+
+algolia:
+  appId: "HI0N3S0FZG"
+  apiKey: "e0fcd80da1f0bfdfda78788ddb3bc0d7"
+  adminApiKey: "6d4d1ca9c3179264dd7f86482b24737e"
+  chunkSize: 5000
+  indexName: "tranquilpeak"
+  fields:
+    - title
+    - date
+    - permalink
+    - thumbnailImageUrl
+    - tags
+    - categories
+    - excerpt
+    - excerpt:strip
