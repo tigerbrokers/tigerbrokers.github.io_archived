@@ -4,7 +4,7 @@ node_js: stable
 
 install:
   - npm install
-  - cd theme/tiger
+  - cd themes/tiger
   - npm install
 
 script:
