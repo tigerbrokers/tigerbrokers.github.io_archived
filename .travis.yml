@@ -6,6 +6,7 @@ install:
   - npm install
   - cd themes/tiger
   - npm install
+  - cd ../..
 
 script:
   - sed -i -e "s/git@/https:\/\/${GH_TOKEN}@/" _config.yml
