@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+author: TigerFED
 tags:
 keywords:
 clearReading: true
@@ -13,7 +14,7 @@ coverSize: partial #full
 coverCaption:
 coverMeta: in #out
 gallery:
- - original_url [thumbnail_url] [caption]
+# - original_url [thumbnail_url] [caption]
 comments: true
 meta: true
 actions: true
