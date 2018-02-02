@@ -4,9 +4,11 @@ node_js: stable
 
 install:
   - npm install
+  - cd theme/tiger
+  - npm install
 
 script:
-  - sed -i -e s/git@/https:\/\/${GH_TOKEN}@/ _config.yml
+  - sed -i -e "s/git@/https:\/\/${GH_TOKEN}@/" _config.yml
   - npm run deploy
 
 branches:
