@@ -10,6 +10,7 @@ install:
 
 script:
   - sed -i -e "s/git@/https:\/\/${GH_TOKEN}@/" _config.yml
+  - sed -i -e "s/com:tigerbrokers/com\/tigerbrokers/" _config.yml
   - npm run deploy
 
 branches:
