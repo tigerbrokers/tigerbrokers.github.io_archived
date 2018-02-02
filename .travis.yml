@@ -1,0 +1,15 @@
+language: node_js
+
+node_js: stable
+
+install:
+  - npm install
+
+script:
+  - sed -i -e s/git@/https:\/\/${GH_TOKEN}@/ _config.yml
+  - npm run deploy
+
+branches:
+  only:
+    - hexo
+
