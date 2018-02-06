@@ -2,7 +2,7 @@
 title: 有关跨域 CORS 及 Nginx 配置
 author: ijse
 clearReading: true
-autoThumbnailImage: true
+autoThumbnailImage: false
 thumbnailImagePosition: left
 metaAlignment: left
 coverSize: partial
@@ -12,15 +12,19 @@ meta: true
 actions: true
 date: 2018-02-06 14:28:58
 tags: [ cors, nginx, http ]
-keywords: 
+keywords:
   - cors
   - nginx
   - http
-thumbnailImage: /assets/images/mike-bryant-75071.jpg
+thumbnailImage: false #//tigerbrokers.github.io/assets/images/mike-bryant-75071.jpg
 coverImage: /assets/images/mike-bryant-75071.jpg
-coverCaption: 
+coverCaption:
 gallery:
 ---
+跨域请求针对浏览器的同源策略(Same-Origin Policy)而言，指一个网站主动请求另外一个网站的资源(图片、javascript、视频等)。
+
+同源策略要求网站只能有限制的访问外部网站的资源，不合法的请求会被拦截。网站的源由协议、域名、端口三部分组成，有一部分不同就被视为不同源，两个不同的域名即便指向同一个ip地址也是跨域的。网站通过AJAX请求资源是典型的跨域请求，需要外部网站许可才能访问。
+<!-- excerpt -->
 
 # 什么是跨域？
 跨域请求针对浏览器的同源策略(Same-Origin Policy)而言，指一个网站主动请求另外一个网站的资源(图片、javascript、视频等)。
@@ -95,8 +99,8 @@ Access-Control-Request-Headers: authorization
 Accept: */*
 Accept-Encoding: gzip, deflate, br
 Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
- 
- 
+
+
 // OPTION Response
 HTTP/1.1 204 No Content
 Date: Wed, 10 Jan 2018 09:13:22 GMT
@@ -107,19 +111,19 @@ Access-Control-Allow-Origin: https://test-web.itiger.com
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Methods: POST, GET, OPTIONS, HEAD, DELETE, PUT
 Access-Control-Allow-Headers: DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization
- 
- 
+
+
 // GET Request
 GET /api/v1/captcha?deviceId=web20180110_71007&platform=desktop-web&env=Chrome&vendor=web&lang=&appVer=4.0.0 HTTP/1.1
 Host: test-oauth.itiger.com
 Connection: keep-alive
- 
+
 Accept: application/json, text/plain, */*
 Origin: https://test-web.itiger.com
 Authorization: Bearer gMnH2uCUzsoncdiC90XJaYDpoYgxDYiBMydIUGfC9NDkfSiiD0
- 
- 
- 
+
+
+
 // GET Response
 HTTP/1.1 200 OK
 Date: Wed, 10 Jan 2018 09:16:19 GMT
@@ -145,8 +149,8 @@ Content-Encoding: gzip
 // Vanilla
 let xhr = new XMLHttpRequest()
 xhr.withCredentials = true
- 
- 
+
+
 // JQuery
 $.ajax({
     type: 'POST',
@@ -156,8 +160,8 @@ $.ajax({
        withCredentials: true
     }
 })
- 
- 
+
+
 // Vue-resource
 const result = await this.$http.get(url, {
   credentials: true
@@ -188,51 +192,51 @@ map $http_origin $allow_origin {
   default "";
   "~^https?://(?:[^/]*\.)?(stevebuzonas\.(?:com|local))(?::[0-9]+)?$" "$http_origin";
 }
- 
+
 map $request_method $cors_method {
   default "allowed";
   "OPTIONS" "preflight";
 }
- 
+
 map $cors_method $cors_max_age {
   default "";
   "preflight" 1728000;
 }
- 
+
 map $cors_method $cors_allow_methods {
   default "";
   "preflight" "GET, POST, OPTIONS";
 }
- 
+
 map $cors_method $cors_allow_headers {
   default "";
   "preflight" "Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since,Authorization";
 }
- 
+
 map $cors_method $cors_content_length {
   default $initial_content_length;
   "preflight" 0;
 }
- 
+
 map $cors_method $cors_content_type {
   default $initial_content_type;
   "preflight" "text/plain charset=UTF-8";
 }
- 
+
 add_header Access-Control-Allow-Origin $allow_origin always;
 add_header Access-Control-Allow-Credentials 'true' always;
 add_header Access-Control-Max-Age $cors_max_age always;
 add_header Access-Control-Allow-Methods $cors_allow_methods always;
 add_header Access-Control-Allow-Headers $cors_allow_headers always;
- 
+
 set $initial_content_length $sent_http_content_length;
 add_header 'Content-Length' "";
 add_header 'Content-Length' $cors_content_length;
- 
+
 set $initial_content_type $sent_http_content_type;
 add_header Content-Type "";
 add_header Content-Type $cors_content_type;
- 
+
 if ($request_method = 'OPTIONS') {
   return 204;
 }
@@ -245,8 +249,8 @@ if ($request_method = 'OPTIONS') {
 ```nginx
 location / {
   include ./nginx-cors.conf;
- 
- 
+
+
   proxy_pass http://127.0.0.1:4000;
   proxy_set_http_header HOST $http_host;
   ...
