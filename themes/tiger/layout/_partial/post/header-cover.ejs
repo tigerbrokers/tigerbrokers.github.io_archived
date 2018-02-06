@@ -7,7 +7,8 @@
             coverImageUrl = post.coverImage;
         }
         else {
-            coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
+            // coverImageUrl = url_for(post.path.replace('.html', '/') + post.coverImage);
+            coverImageUrl = post.coverImage;
         }
 %>
         <div class="post-header-cover

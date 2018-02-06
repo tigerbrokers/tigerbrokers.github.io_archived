@@ -92,7 +92,7 @@ theme_config:
   favicon: /assets/images/favicon.ico
   cover_image: bg-city.jpg
   author:
-    picture: logo.png
+    picture: tfed.png
   sidebar:
     menu:
         home:
