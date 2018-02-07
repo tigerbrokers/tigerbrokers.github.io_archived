@@ -21,11 +21,13 @@
                                .replace(/<!-- ?content ?-->/g, '<div class="main-content-wrap">');
 %>
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <% if (post.layout === 'post') { %>
     <% if (post.coverCaption) { %>
         <span class="post-header-cover-caption caption"><%= post.coverCaption %></span>
     <% } %>
     <% if (!post.coverImage || post.coverMeta === 'out') { %>
         <%- partial('post/header')%>
+    <% } %>
     <% } %>
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
@@ -33,8 +35,9 @@
             <%- partial('post/gallery') %>
         </div>
     </div>
+    <% if (post.layout === 'post') { %>
     <div id="post-footer" class="post-footer main-content-wrap">
-      <%- partial('post/copyright', post) %>
+        <%- partial('post/copyright', post) %>
         <% if ((post.tags) && (post.tags.length > 0)) { %>
             <div class="post-footer-tags">
                 <span class="text-color-light text-small"><%= __('post.tagged_in') %></span><br/>
@@ -52,5 +55,6 @@
             <% } %>
         <% } %>
     </div>
+    <% } %>
 </article>
 

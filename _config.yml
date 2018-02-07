@@ -111,12 +111,12 @@ theme_config:
             # title: global.archives
             # url: /archives
             # icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
-            # `open-algolia-search` classes are used to open algolia search modal
-            class: open-algolia-search
+        # search:
+            # title: global.search
+            # url: /#search
+            # icon: search
+            # # `open-algolia-search` classes are used to open algolia search modal
+            # class: open-algolia-search
         about:
             title: global.about
             url: /#about
