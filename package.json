@@ -8,6 +8,8 @@
   "scripts": {
     "start": "hexo server",
     "deploy": "hexo deploy",
+    "new:page": "hexo new page",
+    "new:post": "hexo new page",
     "postinstall": "cd themes/tiger && npm install"
   },
   "dependencies": {
